@@ -130,7 +130,7 @@ SELECT * FROM us_counties_2010;
 -- Windows users: Please check the Note on page xxvii as well.
 
 COPY us_counties_2010
-FROM 'C:\YourDirectory\us_counties_2010.csv'
+FROM '/Users/ohn0000/Dropbox/Project/practical-sql/Chapter_04/us_counties_2010.csv'
 WITH (FORMAT CSV, HEADER);
 
 -- Checking the data
@@ -162,7 +162,7 @@ CREATE TABLE supervisor_salaries (
 -- Listing 4-5: Importing salaries data from CSV to three table columns
 
 COPY supervisor_salaries (town, supervisor, salary)
-FROM 'C:\YourDirectory\supervisor_salaries.csv'
+FROM '/Users/ohn0000/Dropbox/Project/practical-sql/Chapter_04/supervisor_salaries.csv'
 WITH (FORMAT CSV, HEADER);
 
 -- Check the data
@@ -176,7 +176,7 @@ DELETE FROM supervisor_salaries;
 CREATE TEMPORARY TABLE supervisor_salaries_temp (LIKE supervisor_salaries);
 
 COPY supervisor_salaries_temp (town, supervisor, salary)
-FROM 'C:\YourDirectory\supervisor_salaries.csv'
+FROM '/Users/ohn0000/Dropbox/Project/practical-sql/Chapter_04/supervisor_salaries.csv'
 WITH (FORMAT CSV, HEADER);
 
 INSERT INTO supervisor_salaries (town, county, supervisor, salary)
